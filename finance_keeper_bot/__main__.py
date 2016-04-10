@@ -1,5 +1,4 @@
-from finance_keeper_bot import FinanceKeeperBot
+from finance_keeper_bot.bot import FinanceKeeperBot
 
 bot = FinanceKeeperBot()
-
 bot.run()
