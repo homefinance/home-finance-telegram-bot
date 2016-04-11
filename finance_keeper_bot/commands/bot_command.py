@@ -10,7 +10,7 @@ class BotCommand:
         self.telegram_api = TelegramApi()
         self.chat_id = chat_id
 
-    def run(self, message):
+    async def run(self):
         """
         Command call. Must be redefined in child.
         """
