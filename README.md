@@ -2,7 +2,7 @@
 
 Async telegram bot, for managing personal finances.
 
-At backend used [Home Finance REST]
+At backend used [Home Finance REST][homefinance-git]
 
 ## Commands
 
@@ -19,4 +19,4 @@ At backend used [Home Finance REST]
 
 [twitter]: https://twitter.com/harlov
 [blog]: http://blog.harlov.com
-[Home Finance REST](https://github.com/harlov/home-finance)
+[homefinance-git](https://github.com/harlov/home-finance)
