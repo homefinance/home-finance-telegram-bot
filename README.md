@@ -12,7 +12,7 @@ At backend used [Home Finance REST][homefinance-git]
 - report - Show current month report
 
 ## Contacts
-[email][email]
+[send email][email]
 
 [Personal blog][blog]
 
