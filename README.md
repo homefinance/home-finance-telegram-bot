@@ -12,7 +12,8 @@ At backend used [Home Finance REST][homefinance-git]
 - report - Show current month report
 
 ## Contacts
-[send email][email]
+
+send email to nikita@harlov.com
 
 [Personal blog][blog]
 
@@ -21,4 +22,3 @@ At backend used [Home Finance REST][homefinance-git]
 [twitter]: https://twitter.com/harlov
 [blog]: http://blog.harlov.com
 [homefinance-git](https://github.com/harlov/home-finance)
-[email](nikita@harlov.com)
