@@ -5,8 +5,15 @@ import json
 
 @command_router.command('menu')
 class MenuCommand(BotCommand):
+    """
+    Command show user menu buttons.
+    """
+
+    async def a_init(self):
+        pass
+
     MENU_LIST = [
-        ['/credit', '/debit'],
+        ['/spend', '/income'],
         ['/balance', '/report']
     ]
 
@@ -16,5 +23,5 @@ class MenuCommand(BotCommand):
             keyboard=self.MENU_LIST
         )
         await self.telegram_api.bot_request('sendMessage', dict(text='please, select one of the commands',
-                                                                           reply_markup=json.dumps(markup),
-                                                                           chat_id=self.chat_id))
+                                                                reply_markup=json.dumps(markup),
+                                                                chat_id=self.chat_id))

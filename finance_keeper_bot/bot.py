@@ -64,7 +64,7 @@ class FinanceKeeperBot:
     async def route_command(self, msg):
         command = self.extract_command(msg['text'])
         if command is None:
-            command = await self.get_chat_state(msg['chat'])
+            command = await self.restore_state(msg['chat'], msg['text'])
 
         if command is None:
             command = 'menu'
@@ -91,10 +91,11 @@ class FinanceKeeperBot:
         log.debug("command income: %s, args: %s" % (command_name, command_args))
         return command_name, command_args
 
-    async def get_chat_state(self, chat):
+    async def restore_state(self, chat, text):
         current_state = await self.redis_client.get(str(chat['id']))
         if current_state is None:
-            log.info("no state presented for chat %s" % (chat['id'], ))
-            await self.redis_client.set(str(chat['id']), 'yep')
-        else:
-            log.info("state presented for chat %s : %s" % (chat['id'], current_state))
+            return None
+
+        state_dict = json.loads(current_state)
+        state_dict['args_list'].append(text)
+        return state_dict['command'], state_dict['args_list']
