@@ -6,8 +6,8 @@ At backend used [Home Finance REST][homefinance-git]
 
 ## Commands
 
-- credit - Add credit operation. Args - sum, account, category
-- debit - Add debit operation. Args - sum, account, category
+- spend - Add money spend operation. Args - sum, account, category
+- debit - Add income operation. Args - sum, account, category
 - balance - Show current balance on accounts
 - report - Show current month report
 
