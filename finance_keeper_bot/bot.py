@@ -62,6 +62,12 @@ class FinanceKeeperBot:
         await self.route_command(item['message'])
 
     async def route_command(self, msg):
+        """
+        Check command in income msg. If not found, try restore state from redis.
+        use default commad (menu), if state not exist.
+
+        :param msg:
+        """
         command = self.extract_command(msg['text'])
         if command is None:
             command = await self.restore_state(msg['chat'], msg['text'])
@@ -78,6 +84,13 @@ class FinanceKeeperBot:
                                                               text='invalid command parameters: %s.' % (e, )))
 
     def extract_command(self, inp):
+        """
+        Extract command and arguments from income message
+
+        :param inp: income message
+        :return: tuple(command, tuple(<args>)
+        """
+
         if inp[0] != '/':
             return None
 
